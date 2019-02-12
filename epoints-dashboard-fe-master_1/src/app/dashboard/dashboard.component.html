@@ -1,0 +1,44 @@
+<!-- To receive the total products values for active and inactive. -->
+<jqxChart #totalProductChart
+  [width]="800" [height]="500"
+  [title]="'TOTAL PRODUCTS'"
+  [description]="''"
+  [colorScheme]="'scheme01'"
+  [source]="productData"
+  [seriesGroups]="productSeriesGroups">
+</jqxChart><br>
+
+<jqxChart #trendCharts
+  [width]="800" [height]="500"
+  [title]="'TOTAL PRODUCTS TREND'"
+  [description]="''"
+  [source]="trendData" [xAxis]="trendXAxis"
+  [valueAxis]="trendValueAxis" [seriesGroups]="trendSeriesGroups" [colorScheme]="'scheme01'">
+</jqxChart>
+
+<jqxChart #debugCountCharts
+  [width]="800" [height]="500"
+  [title]="'TOTAL DEBUG PRODUCTS TREND'"
+  [description]="''"
+  [source]="debugData" [xAxis]="debugXAxis"
+  [valueAxis]="debugValueAxis" [seriesGroups]="debugSeriesGroups" [colorScheme]="'scheme01'">
+</jqxChart>
+
+<div class="table-responsive">
+  <h2 class="h2-heading">LAST UPDATED</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>RETAILER</th>
+        <th>UPDATED DATE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of lastUpdatedData" [ngClass]="{'highlight': p.highlight }">
+        <td>{{ p.retailer }}</td>
+        <td>{{ p.date | date:'yyyy/MM/dd HH:mm:ss'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

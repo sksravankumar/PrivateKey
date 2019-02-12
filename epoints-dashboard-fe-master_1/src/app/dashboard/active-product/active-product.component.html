@@ -1,0 +1,74 @@
+<jqxChart #departments
+  [width]="800" [height]="500"
+  [title]="'DEPARTMENTS'"
+  [description]="''"
+  [colorScheme]="'scheme01'"
+  [source]="departmentsData"
+  [seriesGroups]="departmentSeriesGroup">
+</jqxChart>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>DEPARTMENT</th>
+        <th>PRODUCTS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of departmentsData">
+        <td>{{ p.department }}</td>
+        <td>{{ p.count }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr><br>
+<jqxChart #retailers
+  [width]="800" [height]="500"
+  [title]="'RETAILERS'"
+  [description]="''"
+  [colorScheme]="'scheme01'"
+  [source]="retailersData"
+  [seriesGroups]="retailerSeriesGroup">
+</jqxChart>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>RETAILER</th>
+        <th>PRODUCTS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of retailersData">
+        <td>{{ p.retailer }}</td>
+        <td>{{ p.count }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr><br>
+<jqxChart #countRange
+  [width]="800" [height]="500"
+  [title]="'POINTS RANGE'"
+  [description]="''"
+  [colorScheme]="'scheme01'"
+  [source]="rangeData"
+  [seriesGroups]="rangeSeriesGroup">
+</jqxChart>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>RANGE</th>
+        <th>PRODUCTS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of rangeData">
+        <td>{{ p.count_range }}</td>
+        <td>{{ p.count }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
